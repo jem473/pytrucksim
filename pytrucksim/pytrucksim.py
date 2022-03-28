@@ -71,6 +71,12 @@ class Telemetry:
     def __init__(self):
         self.mm = BinaryMemoryMap(HANDLE, MM_NAME, MM_SIZE, MM_TYPES)
         self.update()
+    
+    def speed_mph(self):
+        return self.speed * 2.237
+    
+    def speed_kph(self):
+        return self.speed * 3.6
 
     def update(self):
         self.mm.update()
